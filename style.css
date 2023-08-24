@@ -1,0 +1,108 @@
+body {
+  margin: auto;
+}
+
+.container {
+  background-color: lightcoral;
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header"
+    "products";
+}
+
+.item {
+  border: 1px dashed black;
+  padding: 1em;
+  margin: 0 1em;
+}
+
+.item-1 {
+  grid-area: header;
+}
+
+.item-2 {
+  grid-area: products;
+}
+
+.logo {
+  grid-area: logo;
+}
+
+.button-home {
+  text-align: right;
+  grid-area: home;
+}
+
+.button-contact {
+  text-align: right;
+  grid-area: contact;
+}
+/* Products to be listed */
+.pr {
+  border: 1px dashed black;
+  padding: 1em;
+}
+
+.pr1 {
+  grid-area: pr1;
+}
+
+.pr2 {
+  grid-area: pr2;
+}
+
+.pr3 {
+  grid-area: pr3;
+}
+
+/* Screen adjusting */
+@media only screen and (min-width: 48rem) {
+  .container {
+    background-color: rgb(128, 240, 141);
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 3fr 3fr;
+    grid-template-areas:
+      "header"
+      "products";
+  }
+  .item-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "pr1 pr2"
+      "pr3 .";
+    border: 1px dashed black;
+  }
+}
+
+@media only screen and (min-width: 64rem) {
+  .container {
+    background-color: rgb(152, 128, 240);
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 3fr 3fr;
+    grid-template-areas:
+      "header"
+      "products";
+  }
+  .item-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "pr1 pr2 pr3";
+    border: 1px dashed black;
+  }
+
+  .item-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "logo home contact";
+    border: 1px dashed black;
+  }
+}
